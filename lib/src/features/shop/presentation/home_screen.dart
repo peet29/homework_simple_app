@@ -50,7 +50,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               );
             });
       }, error: (error, st) {
-        return const Center(child: Text('Something went wrong'));
+        return Center(child: Text(error.toString()));
       }, loading: () {
         return const Center(child: CircularProgressIndicator());
       }),
