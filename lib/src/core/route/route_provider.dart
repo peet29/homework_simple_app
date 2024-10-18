@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:homework_simple_app/src/core/route/route_name.dart';
+import 'package:homework_simple_app/src/features/shop/presentation/home_screen.dart';
+import 'package:homework_simple_app/src/features/shop/presentation/product_screen.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -19,14 +21,18 @@ GoRouter goRouter(GoRouterRef ref) {
         name: homeRoute,
         path: '/',
         pageBuilder: (BuildContext context, GoRouterState state) {
-          return const MaterialPage(child: Text('home'));
+          return const MaterialPage(child: HomeScreen());
         },
       ),
       GoRoute(
         name: productList,
-        path: '/$productList/:productId',
+        path: '/$productList/:category',
         pageBuilder: (BuildContext context, GoRouterState state) {
-          return const MaterialPage(child: Text('product'));
+          final category = state.pathParameters['category'] ?? '';
+          return MaterialPage(
+              child: ProductScreen(
+            category: category,
+          ));
         },
       ),
     ],

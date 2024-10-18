@@ -10,6 +10,6 @@ class ProductModel with _$ProductModel {
     required String description,
     required String category,
     required List<String> images,
-    required List<String> thumbnail,
+    required String thumbnail,
   }) = _ProductModel;
 }

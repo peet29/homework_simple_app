@@ -15,8 +15,7 @@ _$ProductResponseImpl _$$ProductResponseImplFromJson(
       category: json['category'] as String,
       images:
           (json['images'] as List<dynamic>).map((e) => e as String).toList(),
-      thumbnail:
-          (json['thumbnail'] as List<dynamic>).map((e) => e as String).toList(),
+      thumbnail: json['thumbnail'] as String,
     );
 
 Map<String, dynamic> _$$ProductResponseImplToJson(

@@ -21,7 +21,7 @@ mixin _$ProductModel {
   String get description => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   List<String> get images => throw _privateConstructorUsedError;
-  List<String> get thumbnail => throw _privateConstructorUsedError;
+  String get thumbnail => throw _privateConstructorUsedError;
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.
@@ -42,7 +42,7 @@ abstract class $ProductModelCopyWith<$Res> {
       String description,
       String category,
       List<String> images,
-      List<String> thumbnail});
+      String thumbnail});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
       thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as String,
     ) as $Val);
   }
 }
@@ -110,7 +110,7 @@ abstract class _$$ProductModelImplCopyWith<$Res>
       String description,
       String category,
       List<String> images,
-      List<String> thumbnail});
+      String thumbnail});
 }
 
 /// @nodoc
@@ -155,9 +155,9 @@ class __$$ProductModelImplCopyWithImpl<$Res>
           : images // ignore: cast_nullable_to_non_nullable
               as List<String>,
       thumbnail: null == thumbnail
-          ? _value._thumbnail
+          ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as String,
     ));
   }
 }
@@ -171,9 +171,8 @@ class _$ProductModelImpl implements _ProductModel {
       required this.description,
       required this.category,
       required final List<String> images,
-      required final List<String> thumbnail})
-      : _images = images,
-        _thumbnail = thumbnail;
+      required this.thumbnail})
+      : _images = images;
 
   @override
   final int id;
@@ -191,13 +190,8 @@ class _$ProductModelImpl implements _ProductModel {
     return EqualUnmodifiableListView(_images);
   }
 
-  final List<String> _thumbnail;
   @override
-  List<String> get thumbnail {
-    if (_thumbnail is EqualUnmodifiableListView) return _thumbnail;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_thumbnail);
-  }
+  final String thumbnail;
 
   @override
   String toString() {
@@ -216,19 +210,13 @@ class _$ProductModelImpl implements _ProductModel {
             (identical(other.category, category) ||
                 other.category == category) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
-            const DeepCollectionEquality()
-                .equals(other._thumbnail, _thumbnail));
+            (identical(other.thumbnail, thumbnail) ||
+                other.thumbnail == thumbnail));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      description,
-      category,
-      const DeepCollectionEquality().hash(_images),
-      const DeepCollectionEquality().hash(_thumbnail));
+  int get hashCode => Object.hash(runtimeType, id, title, description, category,
+      const DeepCollectionEquality().hash(_images), thumbnail);
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.
@@ -246,7 +234,7 @@ abstract class _ProductModel implements ProductModel {
       required final String description,
       required final String category,
       required final List<String> images,
-      required final List<String> thumbnail}) = _$ProductModelImpl;
+      required final String thumbnail}) = _$ProductModelImpl;
 
   @override
   int get id;
@@ -259,7 +247,7 @@ abstract class _ProductModel implements ProductModel {
   @override
   List<String> get images;
   @override
-  List<String> get thumbnail;
+  String get thumbnail;
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.

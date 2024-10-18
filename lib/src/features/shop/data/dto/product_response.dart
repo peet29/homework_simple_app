@@ -11,7 +11,7 @@ class ProductResponse with _$ProductResponse {
     required String description,
     required String category,
     required List<String> images,
-    required List<String> thumbnail,
+    required String thumbnail,
   }) = _ProductResponse;
 
   factory ProductResponse.fromJson(Map<String, dynamic> json) =>

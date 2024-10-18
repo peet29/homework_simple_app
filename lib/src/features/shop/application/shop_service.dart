@@ -1,7 +1,5 @@
 import 'package:homework_simple_app/src/core/error/failure.dart';
 import 'package:homework_simple_app/src/features/shop/application/ishop_service.dart';
-import 'package:homework_simple_app/src/features/shop/data/dto/categories_response.dart';
-import 'package:homework_simple_app/src/features/shop/data/dto/product_list_response.dart';
 import 'package:homework_simple_app/src/features/shop/data/repository/shop_repository.dart';
 import 'package:homework_simple_app/src/features/shop/domain/category_model.dart';
 import 'package:homework_simple_app/src/features/shop/domain/product_model.dart';
